@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NEXO CONNECT TV — Internet Fibra Óptica</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+--navy:#040D1F;--navy2:#091224;--blue:#0B5AE5;--blue-bright:#1f6ef9;--cyan:#00D4FF;--orange:#FF6B00;--orange2:#ff7f14;--yellow:#FFD600;--white:#fff;--gray:#8BA3C7;--card-bg:rgba(11,30,70,0.7);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Exo 2', sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:70px;background:rgba(4,13,31,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,212,255,0.12)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-wrap{position:relative;width:42px;height:42px;display:flex;align-items:center;justify-content:center}
+.nav-logo-ring{width:42px;height:42px;border-radius:50%;background:conic-gradient(from 0deg,#FF6B00 0%,#0B5AE5 40%,#00D4FF 70%,#FF6B00 100%);animation:spin-slow 8s linear infinite;display:flex;align-items:center;justify-content:center}
+.nav-logo-center{width:32px;height:32px;border-radius:50%;background:var(--navy2);display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.1rem;color:#fff}
+.nav-brand{display:flex;flex-direction:column;line-height:1.1}
+.nav-brand .name{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:2px}
+.nav-brand .tag{font-size:0.62rem;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;font-weight:600}
+@keyframes spin-slow{to{transform:rotate(360deg)}}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;font-weight:600;font-size:0.85rem;color:#8BA3C7;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-cta{background:linear-gradient(135deg,var(--orange),var(--orange2));color:white!important;padding:8px 22px;border-radius:4px;box-shadow:0 0 20px rgba(255,107,0,0.4)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 5% 60px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 80% 50%,rgba(11,90,229,0.25) 0%,transparent 60%),radial-gradient(ellipse at 10% 80%,rgba(255,107,0,0.15) 0%,transparent 50%),var(--navy)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,212,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.04) 1px,transparent 1px);background-size:60px 60px;animation:grid-scroll 20s linear infinite}
+@keyframes grid-scroll{to{background-position:60px 60px}}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);animation:orb-float 8s ease-in-out infinite}
+.orb1{width:500px;height:500px;top:-100px;right:-100px;background:rgba(11,90,229,0.3);animation-delay:0s}
+.orb2{width:300px;height:300px;bottom:50px;left:-50px;background:rgba(255,107,0,0.2);animation-delay:3s}
+.orb3{width:200px;height:200px;top:40%;right:20%;background:rgba(0,212,255,0.15);animation-delay:1.5s}
+@keyframes orb-float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.25);color:var(--cyan);font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border-radius:2px;margin-bottom:24px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(3.5rem,8vw,6.5rem);font-weight:700;line-height:0.9;text-transform:uppercase;letter-spacing:-1px;margin-bottom:8px}
+.hero h1 .line1{color:#fff}
+.hero h1 .line2{background:linear-gradient(90deg,var(--blue-bright),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .line3{background:linear-gradient(90deg,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:clamp(2rem,5vw,4rem);display:block;margin-top:4px}
+.hero-sub{font-size:1.05rem;color:#8BA3C7;font-weight:400;margin:20px 0 36px;line-height:1.7;max-width:540px}
+.hero-sub strong{color:#fff;font-weight:700}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+.btn-primary{background:linear-gradient(135deg,var(--orange),var(--orange2));color:white;font-weight:700;font-size:0.95rem;padding:14px 34px;border-radius:4px;text-decoration:none;letter-spacing:1px;text-transform:uppercase;box-shadow:0 0 30px rgba(255,107,0,0.4);transition:transform 0.2s,box-shadow 0.2s;display:inline-block;border:none;cursor:pointer}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(255,107,0,0.6)}
+.btn-secondary{background:transparent;color:var(--cyan);font-weight:700;font-size:0.95rem;padding:14px 34px;border-radius:4px;text-decoration:none;border:1px solid rgba(0,212,255,0.4);letter-spacing:1px;text-transform:uppercase;transition:border-color 0.2s,background 0.2s;display:inline-block}
+.btn-secondary:hover{border-color:var(--cyan);background:rgba(0,212,255,0.06)}
+.speed-display{display:flex;align-items:center;gap:24px;background:rgba(11,30,70,0.6);border:1px solid rgba(0,212,255,0.15);border-radius:8px;padding:24px 32px;backdrop-filter:blur(12px);max-width:480px;flex-wrap:wrap}
+.speed-number{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:5rem;line-height:1;background:linear-gradient(135deg,var(--blue-bright),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.speed-unit{font-size:1.4rem;font-weight:700;color:var(--cyan);margin-top:8px;display:block}
+.speed-text .label{font-size:0.7rem;color:#8BA3C7;text-transform:uppercase;letter-spacing:2px;font-weight:600}
+.speed-text .val{font-size:1rem;font-weight:700;color:#fff;margin-top:4px}
+.speed-divider{width:1px;height:60px;background:rgba(0,212,255,0.2)}
+.stats-bar{background:linear-gradient(90deg,rgba(11,90,229,0.15),rgba(0,212,255,0.08));border-top:1px solid rgba(0,212,255,0.1);border-bottom:1px solid rgba(0,212,255,0.1);padding:28px 5%}
+.stats-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
+.stat-item{text-align:center}
+.stat-num{font-family:'Rajdhani',sans-serif;font-size:2.4rem;font-weight:700;background:linear-gradient(135deg,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-lbl{font-size:0.75rem;color:#8BA3C7;text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-top:4px}
+.plans{padding:90px 5%;position:relative}
+.plans::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+.plans-header{text-align:center;margin-bottom:60px}
+.section-label{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(0,212,255,0.3);padding:5px 16px;border-radius:2px;margin-bottom:16px}
+.section-title{font-family:'Rajdhani',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.section-title .accent{color:var(--cyan)}
+.section-title .accent2{color:var(--orange)}
+.section-sub{font-size:0.95rem;color:#8BA3C7;margin-top:12px;font-weight:400}
+.plans-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.plan-card{background:rgba(11,30,70,0.7);border:1px solid rgba(0,212,255,0.12);border-radius:8px;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;backdrop-filter:blur(12px);position:relative}
+.plan-card:hover{transform:translateY(-6px);border-color:rgba(0,212,255,0.4);box-shadow:0 20px 60px rgba(0,212,255,0.12)}
+.plan-card.hot{border-color:var(--orange);box-shadow:0 0 30px rgba(255,107,0,0.2)}
+.plan-card.hot::before{content:'MÁS POPULAR';position:absolute;top:14px;right:-24px;background:var(--orange);color:white;font-size:0.58rem;font-weight:700;letter-spacing:1.5px;padding:3px 32px;transform:rotate(45deg)}
+.plan-top{background:linear-gradient(135deg,rgba(11,90,229,0.4),rgba(0,212,255,0.15));padding:20px 18px;text-align:center;border-bottom:1px solid rgba(0,212,255,0.1)}
+.plan-card.hot .plan-top{background:linear-gradient(135deg,rgba(255,107,0,0.3),rgba(255,140,0,0.15));border-bottom-color:rgba(255,107,0,0.2)}
+.plan-name{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff}
+.plan-price{font-family:'Rajdhani',sans-serif;font-size:2.8rem;font-weight:700;color:var(--cyan);line-height:1;margin:8px 0 2px}
+.plan-card.hot .plan-price{color:var(--orange)}
+.plan-period{font-size:0.75rem;color:#8BA3C7;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.plan-body{padding:18px}
+.plan-feat{display:flex;align-items:center;gap:10px;font-size:0.85rem;color:rgba(255,255,255,0.8);font-weight:500;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.plan-feat:last-of-type{border-bottom:none}
+.feat-icon{width:22px;height:22px;border-radius:4px;background:rgba(0,212,255,0.15);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0;color:var(--cyan);font-weight:700}
+.plan-card.hot .feat-icon{background:rgba(255,107,0,0.15);color:var(--orange)}
+.plan-btn{display:block;width:100%;margin-top:18px;background:linear-gradient(135deg,var(--blue),var(--blue-bright));color:white;font-weight:700;font-size:0.85rem;padding:12px;border-radius:4px;text-align:center;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:opacity 0.2s,transform 0.2s;box-shadow:0 4px 20px rgba(11,90,229,0.4)}
+.plan-card.hot .plan-btn{background:linear-gradient(135deg,var(--orange),var(--orange2));box-shadow:0 4px 20px rgba(255,107,0,0.4)}
+.plan-btn:hover{opacity:0.9;transform:scale(1.02)}
+.tv-section{padding:90px 5%;background:linear-gradient(135deg,rgba(11,90,229,0.08),rgba(0,212,255,0.04));position:relative;overflow:hidden}
+.tv-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(0,212,255,0.06),transparent 60%)}
+.tv-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
+.tv-screen{background:#000;border-radius:16px;padding:20px;border:2px solid rgba(0,212,255,0.2);box-shadow:0 0 60px rgba(0,212,255,0.15),0 30px 80px rgba(0,0,0,0.5)}
+.tv-top-bar{display:flex;justify-content:center;align-items:center;background:rgba(11,90,229,0.3);border-radius:6px;padding:8px;margin-bottom:12px;font-size:0.7rem;font-weight:700;color:var(--cyan);letter-spacing:2px;text-transform:uppercase}
+.channels-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.ch-item{background:rgba(255,255,255,0.06);border-radius:4px;padding:6px 4px;text-align:center;font-size:0.55rem;font-weight:700;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.05)}
+.tv-stand{width:40px;height:12px;background:rgba(255,255,255,0.1);margin:0 auto;border-radius:0 0 6px 6px}
+.tv-base{width:80px;height:6px;background:rgba(255,255,255,0.08);margin:0 auto;border-radius:4px}
+.tv-badges{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 28px}
+.badge{padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.badge-hd{background:rgba(255,107,0,0.2);border:1px solid var(--orange);color:var(--orange)}
+.badge-live{background:rgba(255,30,30,0.2);border:1px solid #FF1E1E;color:#FF6060}
+.badge-var{background:rgba(0,212,255,0.15);border:1px solid var(--cyan);color:var(--cyan)}
+.canales-count{font-family:'Rajdhani',sans-serif;font-size:4rem;font-weight:700;background:linear-gradient(135deg,var(--blue-bright),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.canales-label{font-size:0.9rem;color:#8BA3C7;font-weight:400;margin-top:4px}
+.why{padding:90px 5%;position:relative}
+.why-inner{max-width:1100px;margin:0 auto}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:50px}
+.why-card{background:rgba(11,30,70,0.7);border:1px solid rgba(0,212,255,0.1);border-radius:8px;padding:28px 24px;backdrop-filter:blur(12px);transition:border-color 0.25s,transform 0.25s;position:relative;overflow:hidden}
+.why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.why-card:hover::before{transform:scaleX(1)}
+.why-card:hover{border-color:rgba(0,212,255,0.3);transform:translateY(-4px)}
+.why-icon{width:52px;height:52px;border-radius:8px;background:rgba(11,90,229,0.2);border:1px solid rgba(0,212,255,0.2);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px}
+.why-card h3{font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:8px;letter-spacing:0.5px}
+.why-card p{font-size:0.88rem;color:#8BA3C7;line-height:1.6;font-weight:400}
+.contact{padding:90px 5%;background:linear-gradient(135deg,rgba(255,107,0,0.06),rgba(255,140,0,0.03));border-top:1px solid rgba(255,107,0,0.15);position:relative}
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.contact-title{font-family:'Rajdhani',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;text-transform:uppercase;line-height:1;margin-bottom:20px}
+.contact-title .fire{color:var(--orange)}
+.wa-big{display:flex;align-items:center;gap:16px;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);border-radius:8px;padding:20px 24px;text-decoration:none;transition:background 0.2s,box-shadow 0.2s;margin-bottom:16px}
+.wa-big:hover{background:rgba(37,211,102,0.18);box-shadow:0 0 30px rgba(37,211,102,0.2)}
+.wa-icon{font-size:2rem}
+.wa-num{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:#25D366;letter-spacing:1px}
+.wa-lbl{font-size:0.75rem;color:#8BA3C7;text-transform:uppercase;letter-spacing:2px;font-weight:600}
+.contact-features{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.cf-item{display:flex;align-items:center;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.8);font-weight:500}
+.cf-check{width:24px;height:24px;border-radius:50%;background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.3);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--cyan);flex-shrink:0}
+.promo-card{background:rgba(11,30,70,0.7);border:1px solid rgba(255,107,0,0.25);border-radius:12px;padding:36px;text-align:center;box-shadow:0 0 40px rgba(255,107,0,0.1);backdrop-filter:blur(12px)}
+.promo-label{font-size:0.72rem;color:var(--orange);letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+.promo-speed{font-family:'Rajdhani',sans-serif;font-size:4rem;font-weight:700;background:linear-gradient(135deg,var(--blue-bright),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.promo-unit{font-size:1.2rem;color:var(--cyan);font-weight:600;font-family:'Rajdhani',sans-serif}
+.promo-plus{font-size:1rem;color:#8BA3C7;margin:12px 0;font-weight:500}
+.promo-tv{font-family:'Rajdhani',sans-serif;font-size:1.6rem;font-weight:700;color:var(--orange);letter-spacing:1px}
+.promo-price-wrap{margin:20px 0}
+.promo-todo{font-size:0.8rem;color:#8BA3C7;text-transform:uppercase;letter-spacing:2px;font-weight:600}
+.promo-price{font-family:'Rajdhani',sans-serif;font-size:4rem;font-weight:700;color:#fff;line-height:1}
+.promo-install{background:rgba(37,211,102,0.15);border:1px solid rgba(37,211,102,0.3);color:#25D366;font-weight:700;font-size:0.85rem;padding:8px 20px;border-radius:4px;letter-spacing:1px;text-transform:uppercase;display:inline-block;margin-top:4px}
+footer{background:rgba(4,13,31,0.98);border-top:1px solid rgba(0,212,255,0.1);padding:24px 5%;text-align:center}
+footer p{font-size:0.82rem;color:#8BA3C7;font-weight:500}
+footer span{color:var(--cyan)}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:300;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:1.8rem;text-decoration:none;box-shadow:0 6px 30px rgba(37,211,102,0.5);animation:pulse-wa 2.5s ease-in-out infinite;transition:transform 0.2s}
+.wa-float:hover{transform:scale(1.12)}
+@keyframes pulse-wa{0%,100%{box-shadow:0 6px 30px rgba(37,211,102,0.5)}50%{box-shadow:0 6px 50px rgba(37,211,102,0.8)}}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+@media(max-width:900px){.tv-inner,.contact-inner{grid-template-columns:1fr}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+<a class="nav-logo" href="#">
+<div class="nav-logo-wrap"><div class="nav-logo-ring"><div class="nav-logo-center">N</div></div></div>
+<div class="nav-brand"><span class="name">NEXO CONNECT TV</span><span class="tag">Donde la velocidad se encuentra</span></div>
+</a>
+<ul class="nav-links">
+<li><a href="#planes">Planes</a></li>
+<li><a href="#television">Televisión</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#contacto" class="nav-cta">Conectar Ahora</a></li>
+</ul>
+</nav>
+<section class="hero" id="inicio">
+<div class="hero-grid"></div>
+<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+<div class="hero-content">
+<div class="hero-badge"><span class="badge-dot"></span> 100% Fibra Óptica · Simétrico</div>
+<h1><span class="line1">INTERNET</span><br><span class="line2">FIBRA ÓPTICA</span><br><span class="line3">ILIMITADO</span></h1>
+<p class="hero-sub">Velocidad real y simétrica para tu hogar o negocio. Sin cláusulas de permanencia. Instalación gratis.</p>
+<div class="hero-btns"><a href="#planes" class="btn-primary">Ver Planes →</a><a href="https://wa.me/573150714133" class="btn-secondary" target="_blank">💬 Hablar con asesor</a></div>
+<div class="speed-display reveal">
+<div><div class="speed-number">400</div><span class="speed-unit">Mbps</span></div>
+<div class="speed-divider"></div>
+<div class="speed-text"><div class="label">Velocidad</div><div class="val">De Bajada</div><div style="height:8px"></div><div class="label">Velocidad</div><div class="val">De Subida</div></div>
+</div>
+</div>
+</section>
+<div class="stats-bar"><div class="stats-inner"><div class="stat-item reveal"><div class="stat-num">400</div><div class="stat-lbl">Mbps Máximos</div></div><div class="stat-item reveal"><div class="stat-num">+80</div><div class="stat-lbl">Canales TV</div></div><div class="stat-item reveal"><div class="stat-num">100%</div><div class="stat-lbl">Fibra Óptica</div></div><div class="stat-item reveal"><div class="stat-num">0</div><div class="stat-lbl">Cláusulas</div></div><div class="stat-item reveal"><div class="stat-num">GRATIS</div><div class="stat-lbl">Instalación</div></div></div></div>
+<section class="plans" id="planes">
+<div class="plans-header">
+<div class="section-label reveal">Nuestros Planes</div>
+<h2 class="section-title reveal">Elige tu Conexión</h2>
+<p class="section-sub reveal">Todos los planes incluyen Fibra Óptica Simétrica · Sin permanencia · Instalación gratis</p>
+</div>
+<div class="plans-grid">
+    <div class="plan-card reveal"><div class="plan-top"><div class="plan-name"></div><div class="plan-price"></div><div class="plan-period">Mensual</div></div><div class="plan-body"><div class="plan-feat"><span class="feat-icon">↑↑3</span> Bajada y Subida</div><div class="plan-feat"><span class="feat-icon">◈</span> Fibra Óptica</div><div class="plan-feat"><span class="feat-icon">✓</span> Sin permanencia</div><a href="https://wa.me/573150714133?text=Hola%2C%20quiero%20el%20plan%20de%20" class="plan-btn" target="_blank">Adquirir →</a></div></div>
+</div>
+</section>
+<section class="tv-section" id="television"><div class="tv-inner"><div class="tv-channels-wrap reveal-left"><div class="tv-screen"><div class="tv-top-bar">📺 Disfruta tus canales favoritos</div><div class="channels-grid"><div class="ch-item">UNO</div><div class="ch-item">Canal 5</div><div class="ch-item">Canal 7</div><div class="ch-item">Foro TV</div><div class="ch-item">SMRTV</div><div class="ch-item">Canal 13</div><div class="ch-item">Canal 14</div><div class="ch-item">TV UNAM</div><div class="ch-item">Telenovelas</div><div class="ch-item">Azclic</div><div class="ch-item">Azteca</div><div class="ch-item">Corazón</div><div class="ch-item">¡Hola! TV</div><div class="ch-item">Más Chic</div><div class="ch-item">Comedy</div><div class="ch-item">Distrito</div><div class="ch-item">Film&amp;Arts</div><div class="ch-item">Pasiones</div><div class="ch-item">Disney</div><div class="ch-item">Disney Jr</div><div class="ch-item">Baby TV</div><div class="ch-item">Nick Jr</div><div class="ch-item">Discovery</div><div class="ch-item">TLC</div><div class="ch-item">Turbo</div><div class="ch-item">ID</div><div class="ch-item">Animal P</div><div class="ch-item">Nat Geo</div><div class="ch-item">AMC</div><div class="ch-item">Golden</div><div class="ch-item">Cinemax</div><div class="ch-item">Cinema 2</div><div class="ch-item">Paramount</div><div class="ch-item">FX</div><div class="ch-item">Star Ch</div><div class="ch-item">ESPN</div><div class="ch-item">ESPN 2</div><div class="ch-item">ESPN 3</div><div class="ch-item">ESPN 4</div><div class="ch-item">TUDN</div><div class="ch-item">TVC Dep</div><div class="ch-item">Adrenalina</div><div class="ch-item">MTV</div><div class="ch-item">VR</div><div class="ch-item">Telehit</div><div class="ch-item">Bandamax</div><div class="ch-item">CDM</div><div class="ch-item">Enlace</div></div></div><div class="tv-stand"></div><div class="tv-base"></div></div><div class="tv-content reveal-right"><div class="section-label">Televisión Incluida</div><h2 class="section-title">Más de 80 Canales en HD</h2><div class="tv-badges"><span class="badge badge-hd">HD</span><span class="badge badge-live">En Vivo</span><span class="badge badge-var">Variedad para todos</span></div><div class="canales-count">+80</div><div class="canales-label">Canales de televisión incluidos en planes con TV</div><div style="margin-top:28px"><a href="https://wa.me/573150714133" class="btn-primary" target="_blank">Contratar con TV →</a></div></div></div></section>
+<section class="why" id="nosotros"><div class="why-inner"><div style="text-align:center"><div class="section-label reveal">¿Por qué Nexo?</div><h2 class="section-title reveal">Velocidad, <span class="accent">Calidad</span> y <span class="accent2">Entretenimiento</span></h2></div><div class="why-grid"><div class="why-card reveal"><div class="why-icon">⚡</div><h3>Velocidad Real</h3><p>Fibra óptica 100% simétrica. Lo que contratas es lo que recibes — sin throttling ni límites ocultos.</p></div><div class="why-card reveal"><div class="why-icon">🔁</div><h3>Sin Permanencia</h3><p>Sin cláusulas que te aten. Cancela cuando quieras, sin penalizaciones ni letras pequeñas.</p></div><div class="why-card reveal"><div class="why-icon">🛠️</div><h3>Instalación Gratis</h3><p>Técnicos especializados instalan tu servicio sin costo adicional. Rápido y profesional.</p></div><div class="why-card reveal"><div class="why-icon">📺</div><h3>TV Incluida</h3><p>Más de 80 canales HD en vivo con variedad para toda la familia en planes combinados.</p></div><div class="why-card reveal"><div class="why-icon">🔒</div><h3>Conexión Estable</h3><p>Infraestructura de fibra óptica de última generación para una señal constante.</p></div><div class="why-card reveal"><div class="why-icon">🚀</div><h3>Máxima Velocidad</h3><p>Hasta 500 Mbps simétricos. Ideal para streaming 4K, gaming y trabajo remoto.</p></div></div></div></section>
+<section class="contact" id="contacto">
+<div class="contact-inner">
+<div class="reveal-left">
+<div class="section-label">Contáctanos</div>
+<h2 class="contact-title">Conéctate<br><span class="fire">Nexo</span><br>Connect TV</h2>
+<p style="color:#8BA3C7;font-size:0.95rem;margin-bottom:28px;line-height:1.65">Habla con uno de nuestros asesores y empieza hoy mismo. Instalación rápida y sin complicaciones.</p>
+<a href="https://wa.me/573150714133" class="wa-big" target="_blank"><span class="wa-icon">💬</span><div><div class="wa-lbl">WhatsApp</div><div class="wa-num">315 071 4133</div></div></a>
+<div class="contact-features"><div class="cf-item"><div class="cf-check">✓</div> Sin cláusulas de permanencia</div><div class="cf-item"><div class="cf-check">✓</div> 100% Fibra Óptica</div><div class="cf-item"><div class="cf-check">✓</div> Instalación gratis</div><div class="cf-item"><div class="cf-check">✓</div> Máxima velocidad y estabilidad</div></div>
+</div>
+<div class="promo-card reveal-right">
+<div class="promo-label">Oferta Destacada</div>
+<div class="promo-speed">400</div>
+<div class="promo-unit">Mbps Simétrico</div>
+<div class="promo-plus">+ Televisión con +80 canales HD</div>
+<div class="promo-tv">📺 TV INCLUIDA</div>
+<div class="promo-price-wrap"><div class="promo-todo">Todo por solo</div><div class="promo-price">$70</div><div style="font-size:0.78rem;color:#8BA3C7;margin-top:4px">MIL PESOS / Mensual</div></div>
+<div class="promo-install">✂ Instalación GRATIS</div>
+<div style="margin-top:20px"><a href="https://wa.me/573150714133" class="btn-primary" target="_blank">¡Lo quiero ahora!</a></div>
+</div>
+</div>
+</section>
+<footer>
+<p>© 2025 <span>NEXO CONNECT TV</span> · 315 071 4133</p>
+<p style="margin-top:6px">Velocidad, Calidad y Entretenimiento Sin Límites.</p>
+</footer>
+<a href="https://wa.me/573150714133" class="wa-float" target="_blank">💬</a>
+<script>
+var els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+els.forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>
